@@ -40,12 +40,15 @@ class GenomeBrowserService {
   x = 2500000;
 
    constructor (elementId: string) {
+    console.log("construct");
     this.elementId = elementId;
     this.subscribeToActions();
   };
 
   public async init() {
+    console.log("init A");
     await init();
+    console.log("init B");
     this.genomeBrowser = new GenomeBrowser();
     this.genomeBrowser?.go();
     this.genomeBrowser?.set_stick("homo_sapiens_GCA_000001405_27:1");
